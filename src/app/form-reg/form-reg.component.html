@@ -1,0 +1,90 @@
+<!-- <form>
+    <div class="container">    
+        <h1><strong>Registrazione</strong></h1>
+        <h2>Compila il form!</h2>
+        <hr>
+
+            <label for="nome"><b>Nome</b></label>
+            <input type="text" id="nome" name="nome" placeholder="Mario"required>
+        
+            <label for="cognome"><b>Cognome</b></label>
+            <input type="text" id="cognome" name="cognome" placeholder="Rossi"required>
+    
+            <label for="datanascita"><b>Data di nascita</b></label>
+            <input type="date" id="datanascita" name="datanascita"required><br><br>
+        
+            <label for="cell"><b>Recapito telefonico</b></label>
+            <input type="text" id="cell" name="cell"required>
+        
+            <label for="indirizzo"><b>Indirizzo</b></label>
+            <input type="text" id="indirizzo" name="indirizzo" placeholder="Via dei Greci 3 "required>
+        
+            <label for="città"><b>Città</b></label>
+            <input type="text" id="citta" name="citta"required>
+            <hr>
+        
+            <label for="username"><b>Username</b></label>
+            <input type="text" id="username" name="username" required>
+        
+            <label for="password"><b>Password</b></label>
+            <input type="password" id="password" name="password" minlength="5" maxlength="15" onkeyup="passValidation()" required>
+    
+            <button class="reg" mat-raised-button color="warn">Registrati</button>
+            <button type = "reset" class="res">Reset</button>
+    </div>
+    
+    
+</form> -->
+
+
+<h1><strong>Registrazione</strong></h1>
+<h2>Compila il form!</h2>
+
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Company (disabled)</mat-label>
+          <input matInput disabled value="Google">
+        </mat-form-field>
+      
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="example-full-width">
+            <mat-label>First name</mat-label>
+            <input matInput>
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width">
+            <mat-label>Long Last Name That Will Be Truncated</mat-label>
+            <input matInput>
+          </mat-form-field></td>
+        </tr></table>
+      
+        <p>
+          <mat-form-field class="example-full-width">
+            <mat-label>Address</mat-label>
+            <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Address 2</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </p>
+      
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="example-full-width">
+            <mat-label>City</mat-label>
+            <input matInput placeholder="Ex. San Francisco">
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width">
+            <mat-label>State</mat-label>
+            <input matInput placeholder="Ex. California">
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width">
+            <mat-label>Postal Code</mat-label>
+            <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
+            <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+          </mat-form-field></td>
+        </tr></table>
+      </form>
+      
+
+
+
