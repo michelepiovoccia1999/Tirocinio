@@ -1,0 +1,48 @@
+<br>
+
+<form class="form" #cryptoForm="ngForm" (ngSubmit)="onCryptoCreate(cryptoForm.value)" >
+  <div class="formcontainer">
+  <div class="container">
+  <mat-form-field appearance="fill">
+    <mat-label>Crypto Name</mat-label>
+    <input matInput type="text" name="nameCrypto" ngModel/>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Crypto Price</mat-label>
+    <input matInput type="text" name="priceCrypto" ngModel/>
+  </mat-form-field>
+  </div>
+</div>
+
+  <input type="submit" value="Add Crypto to Wallet">
+</form>
+
+
+
+
+<br>
+
+<div>
+  <h3>All Crypto</h3>
+
+  <table id="crypto" class="mat-elevation-z8 demo-table">
+    <tr>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Price</td>
+    </tr>
+    <tr *ngFor="let crypto of allCrypto index as i">
+      <td>{{i+1}}</td>
+      <td>{{crypto.nameCrypto}}</td>
+      <td>{{crypto.priceCrypto}}</td>
+      <td><button (click)="onDelete(crypto.id)">Delete</button></td>
+    </tr>
+  </table>
+
+  <input type="submit" value="Refresh your Wallet" (click)="onCryptofatch()">
+</div>
+
+<app-footer></app-footer>
+
+

@@ -1,22 +1,28 @@
 .header {
-	display:inline-block;
-	width: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
+  text-align: center;
 	background: orange;
-	height: 80px;
-	margin: 0;
-	padding: 0;
-	 
+  padding: 3px;
+  font-size: 35px;
+  .logo{
+    width:100px;
+  }
 }
 
-.logo{
-    height:75px;
-   
+.example-spacer {
+  flex: 1 1 auto;
+  background: orange;
 }
 
 
-  
+
+
+
+
+
+
+
+
+
+
+
 

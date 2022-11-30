@@ -1,90 +1,50 @@
-<!-- <form>
-    <div class="container">    
-        <h1><strong>Registrazione</strong></h1>
-        <h2>Compila il form!</h2>
-        <hr>
-
-            <label for="nome"><b>Nome</b></label>
-            <input type="text" id="nome" name="nome" placeholder="Mario"required>
-        
-            <label for="cognome"><b>Cognome</b></label>
-            <input type="text" id="cognome" name="cognome" placeholder="Rossi"required>
-    
-            <label for="datanascita"><b>Data di nascita</b></label>
-            <input type="date" id="datanascita" name="datanascita"required><br><br>
-        
-            <label for="cell"><b>Recapito telefonico</b></label>
-            <input type="text" id="cell" name="cell"required>
-        
-            <label for="indirizzo"><b>Indirizzo</b></label>
-            <input type="text" id="indirizzo" name="indirizzo" placeholder="Via dei Greci 3 "required>
-        
-            <label for="città"><b>Città</b></label>
-            <input type="text" id="citta" name="citta"required>
-            <hr>
-        
-            <label for="username"><b>Username</b></label>
-            <input type="text" id="username" name="username" required>
-        
-            <label for="password"><b>Password</b></label>
-            <input type="password" id="password" name="password" minlength="5" maxlength="15" onkeyup="passValidation()" required>
-    
-            <button class="reg" mat-raised-button color="warn">Registrati</button>
-            <button type = "reset" class="res">Reset</button>
-    </div>
-    
-    
-</form> -->
+<h1><strong> Compila il form per Registrarti</strong></h1>
 
 
-<h1><strong>Registrazione</strong></h1>
-<h2>Compila il form!</h2>
+<form class="form "[formGroup]="homeform" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input matInput type="text" name="nome" formControlName="nome"/>
+  </mat-form-field>
+  <p *ngIf="!homeform.get('nome')?.valid && homeform.get('nome')?.touched">Iserisci il nome per poter continuare! </p>
 
-    <form class="example-form">
-        <mat-form-field class="example-full-width">
-          <mat-label>Company (disabled)</mat-label>
-          <input matInput disabled value="Google">
-        </mat-form-field>
-      
-        <table class="example-full-width" cellspacing="0"><tr>
-          <td><mat-form-field class="example-full-width">
-            <mat-label>First name</mat-label>
-            <input matInput>
-          </mat-form-field></td>
-          <td><mat-form-field class="example-full-width">
-            <mat-label>Long Last Name That Will Be Truncated</mat-label>
-            <input matInput>
-          </mat-form-field></td>
-        </tr></table>
-      
-        <p>
-          <mat-form-field class="example-full-width">
-            <mat-label>Address</mat-label>
-            <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
-          </mat-form-field>
-          <mat-form-field class="example-full-width">
-            <mat-label>Address 2</mat-label>
-            <textarea matInput></textarea>
-          </mat-form-field>
-        </p>
-      
-        <table class="example-full-width" cellspacing="0"><tr>
-          <td><mat-form-field class="example-full-width">
-            <mat-label>City</mat-label>
-            <input matInput placeholder="Ex. San Francisco">
-          </mat-form-field></td>
-          <td><mat-form-field class="example-full-width">
-            <mat-label>State</mat-label>
-            <input matInput placeholder="Ex. California">
-          </mat-form-field></td>
-          <td><mat-form-field class="example-full-width">
-            <mat-label>Postal Code</mat-label>
-            <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
-            <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-          </mat-form-field></td>
-        </tr></table>
-      </form>
-      
+  <mat-form-field appearance="fill">
+    <mat-label>Cognome</mat-label>
+    <input matInput type="text" name="cognome" formControlName="cognome" />
+  </mat-form-field>
+  <p *ngIf="!homeform.get('cognome')?.valid && homeform.get('cognome')?.touched">Iserisci il Cognome per poter continuare! </p>
 
+  <mat-form-field appearance="fill">
+    <mat-label>Indirizzo</mat-label>
+    <input matInput type="text" name="indirizzo" formControlName="indirizzo" />
+  </mat-form-field>
+  <p *ngIf="!homeform.get('indirizzo')?.valid && homeform.get('indirizzo')?.touched">Iserisci l'indirizzo per poter continuare! </p>
 
+  <mat-form-field appearance="fill">
+    <mat-label>Telefono</mat-label>
+    <input matInput type="text" name="cellulare" formControlName="cellulare" />
+  </mat-form-field>
+  <p *ngIf="!homeform.get('cellulare')?.valid && homeform.get('cellulare')?.touched">Iserisci il tuo cellulare per poter continuare! </p>
+
+<mat-form-field appearance="fill">
+    <mat-label>Sesso</mat-label>
+    <input matInput type="text" name="sesso" formControlName="sesso" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Scegli username</mat-label>
+    <input matInput type="text" name="username" formControlName="username" />
+  </mat-form-field>
+  <p *ngIf="!homeform.get('username')?.valid && homeform.get('username')?.touched">Scegli una username per poter continuare! </p>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Scegli Passsword</mat-label>
+    <input matInput type="text" name="password" formControlName="password" />
+  </mat-form-field>
+  <p *ngIf="!homeform.get('password')?.valid && homeform.get('password')?.touched">Scelgi una password per poter continuare e ricorda che deve avere almeno 6caratteri</p>
+
+  <button mat-raised-button color="warn" [disabled]="!homeform.valid"><strong>Registrati ora!</strong></button>
+
+</form>
+<app-footer></app-footer>
 

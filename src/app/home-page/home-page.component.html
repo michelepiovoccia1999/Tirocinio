@@ -1,0 +1,61 @@
+
+<div>
+  <marquee  behavior="scroll" loop="infinite" direction="left">
+      <div>
+          <ng-container *ngFor="let row of bannerData">
+              <div class="sss">
+                  <div class="sss">
+                      <img  [src]="row.image" width="60"  alt="">
+                      <div class="sss">
+                          <h5 class="sss" >{{row.symbol | uppercase}} <span class="text-danger">{{row.market_cap_change_percentage_24h}}%</span></h5>
+                          <p class="sss" >{{row.current_price | currency: "INR"}}</p>
+                      </div>
+                  </div>
+              </div>
+          </ng-container>
+
+      </div>
+  </marquee>
+
+</div>
+<div>
+  <h1><strong> All Crypto</strong></h1>
+  <table id="crypto" class="mat-elevation-z8 demo-table">
+    <tr>
+      <td></td>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Price</td>
+    </tr>
+
+    <tr *ngFor="let row of bannerData index as i">
+
+      <td><img  [src]="row.image" width="25"  height="25" alt=""></td>
+      <td>{{i+1}}</td>
+      <td>{{row.symbol}}</td>
+      <td>{{row.current_price}}</td>
+    </tr>
+  </table>
+  <br>
+  <h1><strong>Admin Crypto</strong></h1>
+  <table id="crypto" class="mat-elevation-z8 demo-table">
+    <tr>
+      <td></td>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Price</td>
+    </tr>
+    <tr *ngFor="let crypto of allCrypto index as i">
+
+     <!-- <td><img src="https://www.kfadv.it/wp-content/uploads/2022/02/Bored_Apes.jpg" width="25" height="25" alt=""></td>-->
+     <td>'logo'</td>
+      <td>{{i+1.1}}</td>
+      <td>{{crypto.nameCrypto}}</td>
+      <td>{{crypto.priceCrypto}}</td>
+    </tr>
+
+
+  </table>
+  <app-footer>
+
+
