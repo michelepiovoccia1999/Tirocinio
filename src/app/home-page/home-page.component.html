@@ -1,17 +1,13 @@
 
 <div>
   <marquee  behavior="scroll" loop="infinite" direction="left">
-      <div>
-          <ng-container *ngFor="let row of bannerData">
-              <div class="sss">
-                  <div class="sss">
-                      <img  [src]="row.image" width="60"  alt="">
-                      <div class="sss">
+      <div class="row">
+          <ng-container  *ngFor="let row of bannerData">
+                      <img  class="col-1" [src]="row.image" width="60"  alt="">
+                      <div class="col-11">
                           <h5 class="sss" >{{row.symbol | uppercase}} <span class="text-danger">{{row.market_cap_change_percentage_24h}}%</span></h5>
                           <p class="sss" >{{row.current_price | currency: "INR"}}</p>
                       </div>
-                  </div>
-              </div>
           </ng-container>
 
       </div>
