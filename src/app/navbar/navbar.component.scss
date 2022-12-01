@@ -1,16 +1,13 @@
 .header {
-  text-align: center;
 	background: orange;
-  padding: 3px;
-  font-size: 35px;
-  .logo{
-    width:100px;
-  }
+}
+
+.logo{
+  width:60px;
 }
 
 .example-spacer {
-  flex: 1 1 auto;
-  background: orange;
+  flex: content;
 }
 
 

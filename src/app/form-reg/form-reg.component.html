@@ -1,7 +1,7 @@
 <h1><strong> Compila il form per Registrarti</strong></h1>
 
 
-<form class="form "[formGroup]="homeform" (ngSubmit)="onSubmit()">
+ <form class="form "[formGroup]="homeform" (ngSubmit)="onSubmit()">
   <mat-form-field appearance="fill">
     <mat-label>Nome</mat-label>
     <input matInput type="text" name="nome" formControlName="nome"/>
@@ -15,21 +15,12 @@
   <p *ngIf="!homeform.get('cognome')?.valid && homeform.get('cognome')?.touched">Iserisci il Cognome per poter continuare! </p>
 
   <mat-form-field appearance="fill">
-    <mat-label>Indirizzo</mat-label>
-    <input matInput type="text" name="indirizzo" formControlName="indirizzo" />
-  </mat-form-field>
-  <p *ngIf="!homeform.get('indirizzo')?.valid && homeform.get('indirizzo')?.touched">Iserisci l'indirizzo per poter continuare! </p>
-
-  <mat-form-field appearance="fill">
     <mat-label>Telefono</mat-label>
     <input matInput type="text" name="cellulare" formControlName="cellulare" />
   </mat-form-field>
   <p *ngIf="!homeform.get('cellulare')?.valid && homeform.get('cellulare')?.touched">Iserisci il tuo cellulare per poter continuare! </p>
 
-<mat-form-field appearance="fill">
-    <mat-label>Sesso</mat-label>
-    <input matInput type="text" name="sesso" formControlName="sesso" />
-  </mat-form-field>
+
 
   <mat-form-field appearance="fill">
     <mat-label>Scegli username</mat-label>
@@ -46,5 +37,8 @@
   <button mat-raised-button color="warn" [disabled]="!homeform.valid"><strong>Registrati ora!</strong></button>
 
 </form>
+
+
+
 <app-footer></app-footer>
 

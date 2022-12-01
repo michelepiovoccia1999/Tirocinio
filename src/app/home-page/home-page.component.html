@@ -1,19 +1,22 @@
 
-<div>
-  <marquee  behavior="scroll" loop="infinite" direction="left">
-      <div class="row">
-          <ng-container  *ngFor="let row of bannerData">
-                      <img  class="col-1" [src]="row.image" width="60"  alt="">
-                      <div class="col-11">
-                          <h5 class="sss" >{{row.symbol | uppercase}} <span class="text-danger">{{row.market_cap_change_percentage_24h}}%</span></h5>
-                          <p class="sss" >{{row.current_price | currency: "INR"}}</p>
-                      </div>
-          </ng-container>
-
+<div class="sss" >
+  <div class="sss">
+    <marquee loop="infinite" direction="left">
+      <div class="sss">
+        <ng-container div="sss" *ngFor="let row of bannerData">
+          <img [src]="row.image" width="60"  alt="">
+          <div class="sss">
+            <div class="sss">
+              <h5 class="sss" >{{row.symbol | uppercase}} <span class="text-danger">{{row.market_cap_change_percentage_24h}}%</span></h5>
+              <p class="sss" >{{row.current_price | currency: "EUR"}}</p>
+            </div>
+          </div>
+        </ng-container>
       </div>
-  </marquee>
-
+    </marquee>
+  </div>
 </div>
+
 <div>
   <h1><strong> All Crypto</strong></h1>
   <table id="crypto" class="mat-elevation-z8 demo-table">
@@ -23,9 +26,7 @@
       <td>Name</td>
       <td>Price</td>
     </tr>
-
     <tr *ngFor="let row of bannerData index as i">
-
       <td><img  [src]="row.image" width="25"  height="25" alt=""></td>
       <td>{{i+1}}</td>
       <td>{{row.symbol}}</td>
@@ -49,9 +50,8 @@
       <td>{{crypto.nameCrypto}}</td>
       <td>{{crypto.priceCrypto}}</td>
     </tr>
-
-
   </table>
-  <app-footer>
+
+<app-footer>
 
 

@@ -27,9 +27,8 @@ export class AdminPageComponent implements OnInit {
     const headers = new HttpHeaders({'myHeader': "CryptoUnisa"});
     this.http.post('https://unisatirocinio-default-rtdb.europe-west1.firebasedatabase.app/crypto.json',crypto, {headers: headers})
     .subscribe((res)=> {
-      console.log(res);
+      this.onCryptofatch();
     });
-
   }
 
   private fatchCrypto(){
@@ -55,7 +54,9 @@ export class AdminPageComponent implements OnInit {
 
   onDelete(id: string){
      this.http.delete('https://unisatirocinio-default-rtdb.europe-west1.firebasedatabase.app/crypto/'+id+'.json')
-     .subscribe();
+     .subscribe((res)=> {
+      this.onCryptofatch();
+    });
   }
 
 }

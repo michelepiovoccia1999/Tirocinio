@@ -1,11 +1,29 @@
 <br>
 
+<form class="form" >
+  <div class="formcontainer">
+  <div class="container">
+  <mat-form-field appearance="fill">
+    <mat-label>Username</mat-label>
+    <input matInput type="text"/>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input matInput type="text"/>
+  </mat-form-field>
+  </div>
+</div>
+
+  <input type="submit" value="Sign In">
+</form>
+
 <form class="form" #cryptoForm="ngForm" (ngSubmit)="onCryptoCreate(cryptoForm.value)" >
   <div class="formcontainer">
   <div class="container">
   <mat-form-field appearance="fill">
     <mat-label>Crypto Name</mat-label>
-    <input matInput type="text" name="nameCrypto" ngModel/>
+    <input matInput type="text" name="nameCrypto" ngModel required=""/>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
@@ -36,8 +54,6 @@
       <td><button (click)="onDelete(crypto.id)">Delete</button></td>
     </tr>
   </table>
-
-  <input type="submit" value="Refresh your Wallet" (click)="onCryptofatch()">
 </div>
 
 <app-footer></app-footer>
