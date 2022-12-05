@@ -1,5 +1,6 @@
 import { formatCurrency } from '@angular/common';
-import { Component, ViewChild } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, NgForm, Validators } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import { interval } from 'rxjs';
@@ -11,21 +12,23 @@ import { interval } from 'rxjs';
   templateUrl: './form-reg.component.html',
   styleUrls: ['./form-reg.component.scss']
 })
-export class FormRegComponent {
+export class FormRegComponent implements OnInit {
 
-    homeform: FormGroup = new FormGroup({
-      nome: new FormControl(null,Validators.required),
-      cognome: new FormControl(null,Validators.required),
-      indirizzo: new FormControl(null,Validators.required),
-      cellulare: new FormControl(null,Validators.required),
-      sesso: new FormControl(null),
-      username: new FormControl(null, Validators.required),
-      password: new FormControl(null, [Validators.required, Validators.minLength(6)])
-  });
 
-  onSubmit(){
-    console.log(this.homeform);
+
+  constructor( private http: HttpClient){}
+
+  ngOnInit(){}
+
+  onUserCreate(user: {nameUser: string,  cognomeUser: string, cellulareUser: string, username: string, password:string}){
+    console.log(user);
+    const headers = new HttpHeaders({'myHeader': "CryptoUnisa"});
+    this.http.post('https://unisatirocinio-default-rtdb.europe-west1.firebasedatabase.app/users.json',user, {headers: headers})
+    .subscribe((res)=> {
+
+    });
   }
+
 }
 
 

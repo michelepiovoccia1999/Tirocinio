@@ -6,8 +6,11 @@
         <ng-container div="sss" *ngFor="let row of bannerData">
           <img [src]="row.image" width="60"  alt="">
           <div class="sss">
+
             <div class="sss">
+
               <h5 class="sss" >{{row.symbol | uppercase}} <span class="text-danger">{{row.market_cap_change_percentage_24h}}%</span></h5>
+
               <p class="sss" >{{row.current_price | currency: "EUR"}}</p>
             </div>
           </div>

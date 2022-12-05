@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { Crypto } from '../model/crypto';
+import {Users } from '../model/user';
 
 @Component({
   selector: 'app-admin-page',
@@ -10,7 +11,10 @@ import { Crypto } from '../model/crypto';
 })
 export class AdminPageComponent implements OnInit {
   allCrypto: Crypto[]= [];
+  allUsers: Users[]= [];
   isFatching: boolean= false;
+
+  oggi= Date.now();
 
   constructor(private http: HttpClient){}
 
@@ -32,7 +36,6 @@ export class AdminPageComponent implements OnInit {
   }
 
   private fatchCrypto(){
-
     this.isFatching= true;
     this.http.get<{[key: string]: Crypto}>('https://unisatirocinio-default-rtdb.europe-west1.firebasedatabase.app/crypto.json')
     .pipe(map((res) =>{
@@ -51,6 +54,28 @@ export class AdminPageComponent implements OnInit {
     })
 
   }
+
+  private fatchUsers(){
+
+    this.isFatching= true;
+    this.http.get<{[key: string]: Users }>('https://unisatirocinio-default-rtdb.europe-west1.firebasedatabase.app/users.json')
+    .pipe(map((res) =>{
+      const users= []
+      for(const key in res){
+        if (res.hasOwnProperty(key)){
+          users.push({...res[key], id: key})
+        }
+      }
+      return crypto;
+    }))
+    .subscribe((users) =>{
+      console.log(users);
+
+      this.isFatching= true;
+    })
+
+  }
+
 
   onDelete(id: string){
      this.http.delete('https://unisatirocinio-default-rtdb.europe-west1.firebasedatabase.app/crypto/'+id+'.json')

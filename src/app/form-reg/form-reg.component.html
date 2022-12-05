@@ -1,44 +1,109 @@
-<h1><strong> Compila il form per Registrarti</strong></h1>
+<!--<form class="form" #userForm="ngForm" (ngSubmit)="onUserCreate(userForm.value)" >
+  <div class="formcontainer">
+    <div class="container">
+      <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" name="nameUser" ngModel/>
+      </mat-form-field>
 
+      <mat-form-field appearance="fill">
+        <mat-label>Cognome</mat-label>
+        <input matInput type="text" name="cognomeUser" ngModel/>
+      </mat-form-field>
 
- <form class="form "[formGroup]="homeform" (ngSubmit)="onSubmit()">
-  <mat-form-field appearance="fill">
-    <mat-label>Nome</mat-label>
-    <input matInput type="text" name="nome" formControlName="nome"/>
-  </mat-form-field>
-  <p *ngIf="!homeform.get('nome')?.valid && homeform.get('nome')?.touched">Iserisci il nome per poter continuare! </p>
+      <mat-form-field appearance="fill">
+        <mat-label>Cellulare</mat-label>
+        <input matInput type="text" name="cellulareUser" ngModel/>
+      </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Cognome</mat-label>
-    <input matInput type="text" name="cognome" formControlName="cognome" />
-  </mat-form-field>
-  <p *ngIf="!homeform.get('cognome')?.valid && homeform.get('cognome')?.touched">Iserisci il Cognome per poter continuare! </p>
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput type="text" name="username" ngModel/>
+      </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Telefono</mat-label>
-    <input matInput type="text" name="cellulare" formControlName="cellulare" />
-  </mat-form-field>
-  <p *ngIf="!homeform.get('cellulare')?.valid && homeform.get('cellulare')?.touched">Iserisci il tuo cellulare per poter continuare! </p>
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type="text" name="password" ngModel/>
+      </mat-form-field>
+    </div>
+  </div>
+  <input type="submit" value="Crea il tuo account!">
+</form> -->
 
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Scegli username</mat-label>
-    <input matInput type="text" name="username" formControlName="username" />
-  </mat-form-field>
-  <p *ngIf="!homeform.get('username')?.valid && homeform.get('username')?.touched">Scegli una username per poter continuare! </p>
+                <form class="form" #userForm="ngForm" (ngSubmit)="onUserCreate(userForm.value)" >
 
-  <mat-form-field appearance="fill">
-    <mat-label>Scegli Passsword</mat-label>
-    <input matInput type="text" name="password" formControlName="password" />
-  </mat-form-field>
-  <p *ngIf="!homeform.get('password')?.valid && homeform.get('password')?.touched">Scelgi una password per poter continuare e ricorda che deve avere almeno 6caratteri</p>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input matInput type="text" name="nameUser" ngModel/>
 
-  <button mat-raised-button color="warn" [disabled]="!homeform.valid"><strong>Registrati ora!</strong></button>
+                      <label class="form-label" for="form3Example1c">Nome</label>
+                    </div>
+                  </div>
 
-</form>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input matInput type="text" name="cognomeUser" ngModel/>
+                      <label class="form-label" for="form3Example3c">Cognome</label>
+                    </div>
+                  </div>
 
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input matInput type="text" name="cellulareUser" ngModel/>
+                      <label class="form-label" for="form3Example4c">Cellulare</label>
+                    </div>
+                  </div>
 
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input matInput type="text" name="username" ngModel/>
+                      <label class="form-label" for="form3Example4cd">Username</label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input matInput type="text" name="password" ngModel/>
+                      <label class="form-label" for="form3Example4cd">Password</label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Registrati</button>
+                  </div>
+
+                </form>
+
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                <img src="https://vitolavecchia.altervista.org/wp-content/uploads/2022/04/Caratteristiche-e-differenza-tra-NFT-e-Smart-Contract-in-informatica.jpg"
+                  class="img-fluid" alt="Sample image">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <app-footer></app-footer>
 
