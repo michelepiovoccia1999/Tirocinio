@@ -3,7 +3,7 @@ import Web3 from "web3";
 
 declare const window: any;
 
-const address ='there will be address';
+const address ='0x5a0de6DD5090a48c19329589eA609adb25447Cb3';
 const abi = [
     {
       "inputs": [],
@@ -36,6 +36,7 @@ export class ContractService {
   addresses: any;
 
 
+
     constructor() { }
     private getAccounts = async () => {
         try {
@@ -61,6 +62,10 @@ export class ContractService {
 
     public newContract = async() => {
       try {
+        console.log("PROVIDER", window.web3.eth.givenProvider)
+        console.log("ADRESS",window.web3.utils.toChecksumAddress(address))
+
+
         const contract = new window.web3.eth.Contract(
             abi,
             address,

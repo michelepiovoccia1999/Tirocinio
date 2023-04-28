@@ -119,8 +119,12 @@
       <a data-bn-type="button" class="css-1l2in1" (click)="handleAuth()"
         >Get Started</a
       >
+
     </div>
   </div>
+  <button *ngIf="contractService.addresses" (click)="newContract()">
+    premi
+  </button>
 
   <app-footer> </app-footer>
 </div>
