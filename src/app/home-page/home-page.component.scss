@@ -157,7 +157,7 @@
   min-height: 24px;
   border: none;
   background-image: none;
-  background-color: orange;
+  background-color: #ab40ff;
 }
 
 .aaa {
@@ -186,4 +186,17 @@
 .item5 {
   grid-column: 1 / span 3;
   grid-row: 3;
+}
+
+.labelbar{
+  color:white;
+  background-color: rgba(95, 99, 112, 0.5);
+  text-align: center;
+}
+
+.home_header{
+  background-image: url("https://images.prismic.io/axerve/5f7deac7-235e-4d48-9131-8de68711bc8e_Blockchain%20-%20Blog.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max") ;
+  background-size:contain;
+  padding-top:10%;
+  padding-bottom: 10%;
 }
