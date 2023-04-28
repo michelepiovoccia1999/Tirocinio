@@ -87,4 +87,12 @@ export class HomePageComponent implements OnInit {
       console.log('RESP', resp);
     });
   }
+
+  async newContract(){
+    this.contractService.newContract().then((contract) => {
+      console.log('CONTRACT', contract);
+    })
+  }
+
+
 }

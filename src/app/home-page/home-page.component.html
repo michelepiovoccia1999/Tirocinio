@@ -1,24 +1,38 @@
 <div id="boxes">
   <div class="card">
     <h2>BlockChain</h2>
-    <img src="https://www.pandslegal.it/wp-content/uploads/2020/06/blockchain-applicazioni-e-problematiche.png" alt="Mia Immagine" class="foto">
-    <p> descrizione blockchain</p>
+    <img
+      src="https://www.pandslegal.it/wp-content/uploads/2020/06/blockchain-applicazioni-e-problematiche.png"
+      alt="Mia Immagine"
+      class="foto"
+    />
+    <p>descrizione blockchain</p>
   </div>
   <div class="card" (click)="handleAuth()">
     <h2>Meta Mask</h2>
-    <img src="https://logowik.com/content/uploads/images/t_metamask-fox-icon-in-flat-style2194.logowik.com.webp" alt="Mia Immagine" class="foto">
+    <img
+      src="https://logowik.com/content/uploads/images/t_metamask-fox-icon-in-flat-style2194.logowik.com.webp"
+      alt="Mia Immagine"
+      class="foto"
+    />
 
-    <p> descrizione MetaMask</p>
+    <p>Collegati ora a MetaMask</p>
+
+    <button *ngIf="contractService.addresses" (click)="newContract()">
+      premi
+    </button>
   </div>
 
-  <div class="card" >
+  <div class="card">
     <h2>Smart Contract</h2>
-    <img src="https://vitolavecchia.altervista.org/wp-content/uploads/2022/04/Caratteristiche-e-differenza-tra-NFT-e-Smart-Contract-in-informatica.jpg" alt="Mia Immagine" class="foto"  >
+    <img
+      src="https://vitolavecchia.altervista.org/wp-content/uploads/2022/04/Caratteristiche-e-differenza-tra-NFT-e-Smart-Contract-in-informatica.jpg"
+      alt="Mia Immagine"
+      class="foto"
+    />
     <p>Prova Subito!</p>
   </div>
 </div>
-
-
 
 <div class="sss">
   <div class="sss">
@@ -45,7 +59,7 @@
 </div>
 
 <div>
-  <h1><strong> All Crypto</strong></h1>
+  <h1><strong> Popular cryptocurrencies </strong></h1>
   <table id="crypto" class="mat-elevation-z8 demo-table">
     <tr>
       <td></td>
@@ -61,6 +75,30 @@
     </tr>
   </table>
   <br />
+  <br>
+  <h1><strong> Build your crypto portfolio
+  </strong></h1>
+  <div>
+    <div class="wallet">
+      <p class="text">Deposita</p>
+      <img src="https://static.thenounproject.com/png/143748-200.png" alt=" foto_deposito" class="logo">
+    </div>
+    <div class="wallet">
+      <p class="text">Withdraw</p>
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/002/206/241/small/withdraw-money-icon-free-vector.jpg" alt=" foto_deposito" class="logo">
+    </div>
+    <div class="wallet">
+      <p class="text">Earn</p>
+      <img src="https://static.vecteezy.com/system/resources/previews/006/985/879/original/money-bag-with-dollar-symbol-logo-icon-free-vector.jpg" alt=" foto_deposito" class="logo">
+    </div>
+    <div>
+
+      <a data-bn-type="button" class=" css-1l2in1 " (click)="handleAuth()">Get Started</a>
+    </div>
+
+  </div>
+  <img src="https://www.hola-cripto.com/wp-content/uploads/2021/06/metamask-wallet-interface-1024x453.png" alt=" foto_deposito" class="screen">
+
 
   <app-footer> </app-footer>
 </div>
