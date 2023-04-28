@@ -79,10 +79,6 @@
   width: 200px;
   background-color: white;
 }
-.text{
-
-  color: #e89134;
-}
 
 .card:hover {
   box-shadow: 0 30px 30px 0 rgba(0, 0, 0, 0.2);
@@ -96,11 +92,15 @@
 }
 
 .foto {
-  width: 400px;
+  width: 200px;
 }
-.screen{
-  padding-left: 300px;
 
+.foto2 {
+  width: 210px;
+}
+
+.screen {
+  padding-left: 300px;
 }
 
 .logo {
@@ -152,10 +152,38 @@
   line-height: 24px;
   min-width: 80px;
   word-break: keep-all;
-  color: #181A20;
+  color: #181a20;
   border-radius: 4px;
   min-height: 24px;
   border: none;
   background-image: none;
   background-color: orange;
+}
+
+.aaa {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.item1 {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.item2 {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+
+.item5 {
+  grid-column: 1 / span 3;
+  grid-row: 3;
 }
