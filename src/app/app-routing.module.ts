@@ -7,7 +7,7 @@ import { ViewComponent } from './view/view.component';
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
- {path: '',component:ViewComponent },
+ {path: '',component:HomePageComponent },
  {path: 'formReg',component: FormRegComponent },
  {path: 'adminPage',component: AdminPageComponent },
  {path: 'view',component: ViewComponent},
