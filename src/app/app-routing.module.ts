@@ -13,6 +13,7 @@ const routes: Routes = [
  {path: 'view',component: ViewComponent},
  {path: 'home',component: HomePageComponent },
  {path: 'user',component: UserComponent },
+
 ];
 
 @NgModule({
