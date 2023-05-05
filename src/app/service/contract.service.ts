@@ -1,91 +1,86 @@
 import { Injectable } from '@angular/core';
-import Web3 from "web3";
+import { AbiItem } from 'web3-utils'
+
+import Web3 from 'web3';
 
 declare const window: any;
 
-const address ='0x5a0de6DD5090a48c19329589eA609adb25447Cb3';
-const abi = [
-    {
-      "inputs": [],
-      "stateMutability": "nonpayable",
-      "type": "constructor"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": false,
-          "internalType": "",
-        }
-      ],
-      "name": "Token",
-      "type": "event"
-    },
-];
+const abiNewContract = [
+  {
+    outputs: [
+      {
+        internalType: 'uint256',
+        name: 'newValue',
+        type: 'uint256',
+      },
+    ],
+    name: 'getValue',
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+] as const;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
-
-
 export class ContractService {
+  address: string = null;
 
-
-  window:any;
+  window: any;
   addresses: any;
 
+  constructor() {}
 
+  public getAddress() {
+    return this.address;
+  }
 
-    constructor() { }
-    private getAccounts = async () => {
-        try {
-            return await window.ethereum.request({ method: 'eth_accounts' });
-        } catch (e) {
-            return [];
-        }
+  public setAddress(param: string) {
+    this.address = param;
+  }
+
+  private getAccounts = async () => {
+    try {
+      return await window.ethereum.request({ method: 'eth_accounts' });
+    } catch (e) {
+      return [];
     }
+  };
 
-    public openMetamask = async () => {
-        window.web3 = new Web3(window.ethereum);
-        this.addresses = await this.getAccounts();
-        console.log("addresses",this.addresses);
-        if (!this.addresses.length) {
-            try {
-                this.addresses = await window.ethereum.enable();
-            } catch (e) {
-                return false;
-            }
-        }
-        return this.addresses.length ? this.addresses[0] : null;
-    };
-
-    public newContract = async() => {
+  public openMetamask = async () => {
+    window.web3 = new Web3(window.ethereum);
+    this.addresses = await this.getAccounts();
+    console.log('addresses', this.addresses);
+    if (!this.addresses.length) {
       try {
-        console.log("PROVIDER", window.web3.eth.givenProvider)
-        console.log("ADRESS",window.web3.utils.toChecksumAddress(address))
+        this.addresses = await window.ethereum.enable();
+      } catch (e) {
+        return false;
+      }
+    }
+    return this.addresses.length ? this.addresses[0] : null;
+  };
 
+  public newContract = async () => {
+    try {
+      const web3= new Web3(Web3.givenProvider);
+      console.log('PROVIDER', window.web3.eth.givenProvider);
+      console.log('ADRESS', window.web3.utils.toChecksumAddress(this.address));
 
-        const contract = new window.web3.eth.Contract(
-            abi,
-            address,
-        );
-        console.log(contract);
-        const token = await contract.methods.Token().call();
+      const contract = new web3.eth.Contract(
+        abiNewContract as unknown as AbiItem[],
+        this.address
+      );
+      console.log(contract);
+     // const token = await contract.methods.Token().call();
 
-        console.log("token",token)
-        return token
+      //console.log('token', token);
+      contract.methods.getValue().call().then(console.log);
 
-}
-catch (error) {
-    const errorMessage = error.message;
-    console.log(errorMessage)
-
-}
-}
-
-
-
-
-
+      //return token;
+    } catch (error) {
+      const errorMessage = error.message;
+      console.log(errorMessage);
+    }
+  };
 }

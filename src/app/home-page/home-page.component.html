@@ -1,72 +1,39 @@
-<!-- <div id="boxes">
-  <div class="card">
-    <h2>BlockChain</h2>
-    <img
-      src="https://www.pandslegal.it/wp-content/uploads/2020/06/blockchain-applicazioni-e-problematiche.png"
-      alt="Mia Immagine"
-      class="foto"
-    />
-    <p>descrizione blockchain</p>
-  </div>
-  <div class="card" (click)="handleAuth()">
-    <h2>Meta Mask</h2>
-    <img
-      src="https://logowik.com/content/uploads/images/t_metamask-fox-icon-in-flat-style2194.logowik.com.webp"
-      alt="Mia Immagine"
-      class="foto"
-    />
+<!-- inizio banner scorrevole delle crypto-->
+<div class="banner">
+  <div class="container">
+    <div class="sub-header">
+      <marquee loop="infinite" direction="left" behavior="scroll">
+        <div class="row">
+          <ng-container *ngFor="let row of bannerData">
+            <div class="col-1">
+              <div class="card">
+                <img [src]="row.image" width="60" alt="" />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    {{ row.symbol | uppercase }}
+                    <span class="text-danger"
+                      >{{ row.market_cap_change_percentage_24h }}%</span
+                    >
+                  </h5>
 
-    <p>Collegati ora a MetaMask</p>
-
-    <button *ngIf="contractService.addresses" (click)="newContract()">
-      premi
-    </button>
-  </div>
-
-  <div class="card">
-    <h2>Smart Contract</h2>
-    <img
-      src="https://vitolavecchia.altervista.org/wp-content/uploads/2022/04/Caratteristiche-e-differenza-tra-NFT-e-Smart-Contract-in-informatica.jpg"
-      alt="Mia Immagine"
-      class="foto"
-    />
-    <p>Prova Subito!</p>
-  </div>
-</div> -->
-
-<div class="home_header">
-  <div class="labelbar">
-    <h1>Welcome to the World of Blockchain</h1>
-  </div>
-
-</div>
-
-<div class="sss">
-  <div class="sss">
-    <marquee loop="infinite" direction="left">
-      <div class="sss">
-        <ng-container div="sss" *ngFor="let row of bannerData">
-          <img [src]="row.image" width="60" alt="" />
-          <div class="sss">
-            <div class="sss">
-              <h5 class="sss">
-                {{ row.symbol | uppercase }}
-                <span class="text-danger"
-                  >{{ row.market_cap_change_percentage_24h }}%</span
-                >
-              </h5>
-
-              <p class="sss">{{ row.current_price | currency : "EUR" }}</p>
+                  <p class="card-text">
+                    {{ row.current_price | currency : "EUR" }}
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-        </ng-container>
-      </div>
-    </marquee>
+          </ng-container>
+        </div>
+      </marquee>
+    </div>
   </div>
 </div>
+<!-- fine banner scorrevole delle crypto-->
 
-<div>
+<!-- inizio tabella delle crypto-->
+<div class="container__tabella__crypto">
   <h1><strong> Popular cryptocurrencies </strong></h1>
+
   <table id="crypto" class="mat-elevation-z8 demo-table">
     <tr>
       <td></td>
@@ -81,50 +48,88 @@
       <td>{{ row.current_price }}</td>
     </tr>
   </table>
-  <br />
-  <br />
+</div>
+<!-- fine tabella delle crypto-->
+
+<!-- inzio dei servizi metamask-->
+<div class="container__metamask">
   <h1><strong> Build your crypto portfolio. Buy, trade, and hold! </strong></h1>
-  <div class="aaa">
+  <div>
     <img
       src="https://www.hola-cripto.com/wp-content/uploads/2021/06/metamask-wallet-interface-1024x453.png"
       alt=" screnn cell"
-      class="grid-item item2"
     />
 
-    <div class="grid-item item1">
+    <div>
       <p class="text">Deposita</p>
       <img
         src="https://cdn-icons-png.flaticon.com/512/1466/1466684.png"
         alt=" foto_deposito"
-        class="foto"
+        class="foto_logo_servizi"
       />
     </div>
-    <div class="wallet">
+    <div>
       <p class="text">Withdraw</p>
       <img
         src="https://cdn-icons-png.flaticon.com/512/1468/1468183.png"
         alt=" foto_withdraw"
-        class="foto"
-      />
-    </div>
-    <div class="wallet">
-      <p class="text">Earn</p>
-      <img
-        src="https://uploads-ssl.webflow.com/61110d4f51955c3ea8e4b009/613744d6635c6c7a9636a705_sweatcoin-app-icon-no-bg.png"
-        alt=" foto_deposito"
-        class="foto2"
+        class="foto_logo_servizi"
       />
     </div>
     <div>
       <a data-bn-type="button" class="css-1l2in1" (click)="handleAuth()"
         >Get Started</a
       >
-
     </div>
   </div>
-  <button *ngIf="contractService.addresses" (click)="newContract()">
+
+   <button *ngIf="contractService.addresses" (click)="newContract()">
     premi
   </button>
 
-  <app-footer> </app-footer>
+  <!-- fine dei servizi metamask-->
 </div>
+
+
+
+<!--
+<div class="panel">
+  <div class="container_panel">
+    <p class="fade-in intro">Entra nel mondo della:</p>
+    <h2 class="fade-in title-big">Blockchain</h2>
+
+    <img
+      src="https://media.pmf-research.eu/pmf-research.eu/wp-content/uploads/2019/06/img-1.jpg"
+      alt=" screnn cell"
+      class="img-blockchain"
+    />
+  </div>
+</div>
+
+<div class="panel">
+  <div class="container_panel">
+    <p class="fade-in intro">Inizia ad ulizzare tcnologie come:</p>
+    <h2 class="fade-in title-big">MetaMask</h2>
+
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/1200px-MetaMask_Fox.svg.png"
+      alt=" screnn cell"
+      class="img-meta"
+    />
+  </div>
+</div>
+
+<div class="panel">
+  <div class="container_panel">
+    <p class="fade-in intro">Prova anche tu ad effettuare Smartcontract:</p>
+    <h2 class="fade-in title-big">MetaMask & Ganache</h2>
+
+    <img
+      src="https://logowik.com/content/uploads/images/metamask4112.jpg"
+      alt=" screnn cell"
+      class="img"
+    />
+  </div>
+</div>
+-->
+

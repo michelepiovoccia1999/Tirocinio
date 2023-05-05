@@ -5,6 +5,7 @@ import { FormRegComponent } from './form-reg/form-reg.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ViewComponent } from './view/view.component';
 import { UserComponent } from './user/user.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
  {path: '',component:HomePageComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
  {path: 'view',component: ViewComponent},
  {path: 'home',component: HomePageComponent },
  {path: 'user',component: UserComponent },
+ {path: 'nav',component: NavbarComponent },
 
 ];
 

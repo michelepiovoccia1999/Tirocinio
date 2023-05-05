@@ -14,15 +14,14 @@ export class HomePageComponent implements OnInit {
 
   allCrypto: Crypto[] = [];
   bannerData: any = [];
-  contractService: ContractService;
 
-  constructor(private http: HttpClient, private api: ApiService) {}
+  constructor(private http: HttpClient, private api: ApiService, public contractService: ContractService) {}
 
   ngOnInit() {
     this.getAllData();
     this.getBannerData();
     this.fatchCrypto();
-    this.contractService = new ContractService();
+
   }
 
   onCryptofatch() {
@@ -83,12 +82,15 @@ export class HomePageComponent implements OnInit {
   }
 
   async handleAuth() {
-    this.contractService.openMetamask().then((resp) => {
-      console.log('RESP', resp);
+    this.contractService.openMetamask().then((indirizzoAccount) => {
+      console.log('IndirizzoAccount', indirizzoAccount );
+      this.contractService.setAddress(indirizzoAccount);
+
     });
   }
 
   async newContract(){
+
     this.contractService.newContract().then((contract) => {
       console.log('CONTRACT', contract);
     })
