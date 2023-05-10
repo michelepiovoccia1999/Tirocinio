@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs';
 import { ApiService } from '../service/api.service';
 import { ContractService } from '../service/contract.service';
-import AOS from 'aos';
 @Component({
   selector: 'app-prova',
   templateUrl: './prova.component.html',
@@ -21,7 +20,7 @@ export class ProvaComponent implements OnInit {
   ngOnInit() {
     this.getAllData();
     this.getBannerData();
-    AOS.iniy();
+
   }
 
   section1_var = false;
@@ -76,5 +75,5 @@ export class ProvaComponent implements OnInit {
     });
   }
 
-  async getBalance() {}
+
 }
