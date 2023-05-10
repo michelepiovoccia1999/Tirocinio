@@ -2,4 +2,4 @@ Progetto per tirocinio esterno presso l'azienda ospitante: "Nexsoft S.P.A", che 
 
 -Linguaggi utilizzati: JavaScript, TypeScrit, HTML, CSS;
 -Framework: Angular;
--Concetti studiati: Metamask, Smart contract, Blockchain, wallet, transazioni.
+-Concetti studiati: Metamask, Smart contract, Blockchain, wallet, transazioni di crypto.
