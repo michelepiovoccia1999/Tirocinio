@@ -14,24 +14,18 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FormRegComponent } from './form-reg/form-reg.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
-import { AdminPageComponent } from './admin-page/admin-page.component';
 import { FooterComponent } from './footer/footer.component';
-import { ViewComponent } from './view/view.component';
-import { UserComponent } from './user/user.component';
+import { ProvaComponent } from './prova/prova.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FormRegComponent,
     HomePageComponent,
-    AdminPageComponent,
     FooterComponent,
-    ViewComponent,
-    UserComponent,
+    ProvaComponent,
   ],
   imports: [
     BrowserModule,

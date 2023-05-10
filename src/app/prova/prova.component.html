@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Demo</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- inizio video con scritte-->
+    <video
+      src="assets/sfondo.mp4"
+      type="video/mp4"
+      autoplay
+      muted
+      loop
+      id="video-bg"
+    ></video>
+
+    <div class="section" [class.section1]="section1_var">
+      <h1 class="title">Blockchain</h1>
+    </div>
+    <div class="section" [class.section1]="section2_var">
+      <h1 class="title">Metamask</h1>
+    </div>
+    <div class="section" [class.section1]="section3_var">
+      <h1 class="title">Smart Contract</h1>
+    </div>
+    <!-- fine video con scritte-->
+
+    <!-- inizio pannello seguente -->
+    <div class="panel">
+      <!-- inizio banner con crypto -->
+      <div class="banner">
+        <div class="container">
+          <div class="sub-header">
+            <marquee loop="infinite" direction="left" behavior="scroll">
+              <div class="row">
+                <ng-container *ngFor="let row of bannerData">
+                  <div class="col-1">
+                    <div class="card">
+                      <img [src]="row.image" width="60" alt="" />
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          {{ row.symbol | uppercase }}
+                          <span class="text-danger"
+                            >{{ row.market_cap_change_percentage_24h }}%</span
+                          >
+                        </h5>
+
+                        <p class="card-text">
+                          {{ row.current_price | currency : "EUR" }}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
+            </marquee>
+          </div>
+        </div>
+      </div>
+      <br />
+      <!-- fine banner con crypto -->
+
+      <!-- inizio tabella delle crypto-->
+
+      <div class="table-crypto">
+        <h1>Popular cryptocurrencies</h1>
+        <table id="crypto" class="table">
+          <tr>
+            <td></td>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Price</td>
+          </tr>
+          <tr *ngFor="let row of bannerData; index as i">
+            <td><img [src]="row.image" width="50" height="50" alt="" /></td>
+            <td>{{ i + 1 }}</td>
+            <td>{{ row.symbol }}</td>
+            <td>{{ row.current_price }}</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- fine tabella delle crypto-->
+
+      <!-- inizio introduzione servizi di un wallet-->
+      <br />
+      <div class="introduzione">
+        <br />
+        <h2 class="title-big">Wallet: che cos’è?</h2>
+        <p>
+          I Wallet per criptovalute sono progettati per permetterti di accedere
+          in modo sicuro alle tue criptovalute. È importante sapere che questi
+          Wallet non contengono effettivamente le criptovalute, ma solo le
+          informazioni relative alle chiavi pubbliche e private necessarie per
+          effettuare transazioni in criptovaluta. Le criptovalute vere e proprie
+          si trovano nella blockchain, un tipo di registro digitale su cui si
+          basa il funzionamento di numerose criptovalute decentralizzate.
+        </p>
+      </div>
+      <div class="container">
+        <p class="intro">Con un Wallet puoi:</p>
+        <h2 class="title-big">Depositare!</h2>
+        <br />
+        <div class="deposito">
+          <img
+            width="400px"
+            height="250px"
+            src="assets/deposit.png"
+            alt="foto logo deposit"
+          />
+          <p class="desc">DESCRIZIONE DEPOSITO SU UN WALLET</p>
+        </div>
+      </div>
+      <br />
+      <div class="container">
+        <h2 class="title-big-2">Prelevare!</h2>
+        <div class="deposito">
+          <p class="desc">
+            DESCRIZIONE PRELIEVO DA UN WALLET DI
+            CRYPTO.....................................................................................................................................................................................................
+          </p>
+          <img
+            width="400px"
+            height="250px"
+            src="assets/preliev.png"
+            alt="foto logo deposit"
+          />
+        </div>
+      </div>
+      <!-- fine  introduzione servizi di un wallet-->
+
+      <!-- inzio servizi metamask-->
+      <div class="introduzione">
+        <br />
+        <h2 class="title-big">
+          Build your crypto portfolio. Buy, trade, and hold!
+        </h2>
+      </div>
+      <br />
+      <br />
+      <div class="container">
+        <div class="deposito">
+          <img
+            width="700px"
+            height="420px"
+            src="assets/screen.png"
+            alt="foto logo deposit"
+          />
+          <p class="desc">
+            MetaMask funziona grazie all'utilizzo di web3.js, una libreria che
+            fa parte dello sviluppo ufficiale di Ethereum. web3.js nacque per
+            consentire la creazione di applicazioni web che potessero interagire
+            con la blockchain di Ethereum. Grazie ad esso, pagine web e
+            estensioni possono sfruttare la potenza di Ethereum e le sue
+            funzionalità. In questo senso, MetaMask è stato creato per essere un
+            portafoglio per Ethereum e uno strumento per interagire con le
+            dApps. Per raggiungere entrambi i compiti, MetaMask stabilisce un
+            canale di comunicazione tra l'estensione e la dApp in questione. Una
+            volta che l'applicazione riconosce che MetaMask sia presente, viene
+            abilitato e può essere utilizzato dall'utente. Una volta che la dApp
+            è abilitata, l'utente può eseguire tutte le azioni o gli eventi che
+            consente. Dall'acquisto o vendita di token, all'accesso alle risorse
+            oa qualsiasi servizio da essa fornito. Ognuna di queste azioni ha un
+            costo, che deve essere pagato in Ethereum o nel token ad essa
+            indicato. In entrambi i casi, MetaMask dispone degli strumenti
+            necessari per gestire tale interazione.
+          </p>
+        </div>
+      </div>
+      <br />
+
+      <div class="container">
+        <div class="deposito">
+          <p class="desc">
+            Buy, store, send and swap tokens Available as a browser extension
+            and as a mobile app, MetaMask equips you with a key vault, secure
+            login, token wallet, and token exchange—everything you need to
+            manage your digital assets.
+          </p>
+          <img
+            width="400px"
+            height="330px"
+            src="assets/Screenshot 2023-05-09 alle 18.40.15.png"
+            alt="foto logo deposit"
+          />
+        </div>
+      </div>
+      <br />
+      <div class="container">
+        <div class="deposito">
+          <img
+            width="400px"
+            height="300px"
+            src="assets/Screenshot 2023-05-09 alle 18.41.02.png"
+            alt="foto logo deposit"
+          />
+          <p class="desc">
+            Explore blockchain apps MetaMask provides the simplest yet most
+            secure way to connect to blockchain-based applications. You are
+            always in control when interacting on the new decentralized web.
+          </p>
+        </div>
+      </div>
+      <br />
+      <div class="container">
+        <div class="deposito">
+          <p class="desc">
+            Own your data MetaMask generates passwords and keys on your device,
+            so only you have access to your accounts and data. You always choose
+            what to share and what to keep private.
+          </p>
+          <img
+            width="400px"
+            height="300px"
+            src="assets/Screenshot 2023-05-09 alle 18.41.29.png"
+            alt="foto logo deposit"
+          />
+        </div>
+      </div>
+      <br />
+
+      <div class="bottone-meta">
+        <button class="btn-toolset" (click)="handleAuth()">Get Started</button>
+      </div>
+
+      <h1>visita la tua pagina privata</h1>
+      <!-- inzio servizi metamask-->
+    </div>
+    <!-- fine pannello seguente -->
+  </body>
+</html>

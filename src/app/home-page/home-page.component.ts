@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
-import { Crypto } from '../model/crypto';
 import { ApiService } from '../service/api.service';
 import { ContractService } from '../service/contract.service';
 
